@@ -6,6 +6,10 @@
         <pathsSet class="linked-hash-set">
           <string>WEB-INF/web.xml</string>
           <string>index.jsp</string>
+          <string>WEB-INF/lib/changdi-webcomponent-1.0-SNAPSHOT.jar</string>
+          <string>WEB-INF/lib/changdi-service-api-1.0-SNAPSHOT.jar</string>
+          <string>WEB-INF/lib/changdi-service-impl-1.0-SNAPSHOT.jar</string>
+          <string>WEB-INF/lib/changdi-dao-1.0-SNAPSHOT.jar</string>
         </pathsSet>
       </path-set>
     </entry>
@@ -21,6 +25,18 @@
         <exclusions/>
         <optional>false</optional>
       </dependency>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>com.changdi</groupId>
+        <artifactId>changdi-webcomponent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>changdi-webcomponent-1.0-SNAPSHOT.jar</targetFileName>
     </org.apache.maven.plugin.war.util.DependencyInfo>
   </dependenciesInfo>
 </webapp-structure>

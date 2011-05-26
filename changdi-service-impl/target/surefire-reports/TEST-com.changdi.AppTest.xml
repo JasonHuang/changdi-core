@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.02" errors="0" skipped="0" tests="1" name="com.changdi.AppTest">
+<testsuite failures="0" time="0.018" errors="0" skipped="0" tests="1" name="com.changdi.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/opt/sun-jdk-1.6.0.24/jre/lib/amd64"/>
@@ -19,7 +19,7 @@
     <property name="basedir" value="/root/workspace/changdi-core/changdi-service-impl"/>
     <property name="java.endorsed.dirs" value="/opt/sun-jdk-1.6.0.24/jre/lib/endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="surefire.real.class.path" value="/tmp/surefirebooter2884638989306746413.jar"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter636157781890871950.jar"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="line.separator" value="
 "/>
@@ -56,5 +56,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.002" classname="com.changdi.AppTest" name="testApp"/>
+  <testcase time="0.003" classname="com.changdi.AppTest" name="testApp"/>
 </testsuite>
