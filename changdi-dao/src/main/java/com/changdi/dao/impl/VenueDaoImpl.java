@@ -7,28 +7,16 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.changdi.dao.VenueDao;
+import com.changdi.dao.base.BaseDao;
 import com.changdi.persist.Venue;
 
 @Repository
-public class VenueDaoImpl implements VenueDao {
+public class VenueDaoImpl extends BaseDao implements VenueDao {
 
 	private Log logger = LogFactory.getLog(VenueDaoImpl.class);
-
-	@Autowired
-	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
-	@Autowired
-	private SimpleJdbcTemplate simpleJdbcTemplate;
-
-	@Autowired
-	private SimpleJdbcInsert insertActor;
 
 	@Override
 	public void insertVenue(Venue v) {
@@ -45,8 +33,7 @@ public class VenueDaoImpl implements VenueDao {
 
 	@Override
 	public List<Map<String, Object>> findAllVenue() {
-
-		String sql = "select * from venue";
+		String sql = "select * from venue order by createAt desc";
 		return simpleJdbcTemplate.queryForList(sql);
 	}
 }
