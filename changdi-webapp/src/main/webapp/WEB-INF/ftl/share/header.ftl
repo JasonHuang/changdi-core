@@ -6,6 +6,11 @@
 	<title>找网球场地,找球友</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta http-equiv="x-ua-compatible" content="ie=7"/>
+	
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssbase/base-min.css">
+ 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css">
+ 
 	<style type="text/css">
 		.bmImg{
 			background:url("http://image.tianji.com/img/global/port_default.gif") no-repeat scroll 0 0 transparent;
