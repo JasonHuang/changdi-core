@@ -13,24 +13,24 @@
           <string>WEB-INF/classes/test-data.sql</string>
           <string>WEB-INF/lib/changdi-webcomponent-1.0-SNAPSHOT.jar</string>
           <string>WEB-INF/lib/changdi-service-api-1.0-SNAPSHOT.jar</string>
-          <string>WEB-INF/lib/changdi-service-impl-1.0-SNAPSHOT.jar</string>
-          <string>WEB-INF/lib/changdi-dao-1.0-SNAPSHOT.jar</string>
-          <string>WEB-INF/lib/commons-logging-1.1.1.jar</string>
-          <string>WEB-INF/lib/log4j-1.2.16.jar</string>
-          <string>WEB-INF/lib/commons-lang-2.4.jar</string>
-          <string>WEB-INF/lib/spring-context-3.0.5.RELEASE.jar</string>
-          <string>WEB-INF/lib/spring-aop-3.0.5.RELEASE.jar</string>
-          <string>WEB-INF/lib/aopalliance-1.0.jar</string>
+          <string>WEB-INF/lib/spring-webmvc-3.0.5.RELEASE.jar</string>
           <string>WEB-INF/lib/spring-asm-3.0.5.RELEASE.jar</string>
           <string>WEB-INF/lib/spring-beans-3.0.5.RELEASE.jar</string>
           <string>WEB-INF/lib/spring-core-3.0.5.RELEASE.jar</string>
+          <string>WEB-INF/lib/commons-logging-1.1.1.jar</string>
+          <string>WEB-INF/lib/spring-context-3.0.5.RELEASE.jar</string>
+          <string>WEB-INF/lib/spring-aop-3.0.5.RELEASE.jar</string>
+          <string>WEB-INF/lib/aopalliance-1.0.jar</string>
           <string>WEB-INF/lib/spring-expression-3.0.5.RELEASE.jar</string>
+          <string>WEB-INF/lib/spring-context-support-3.0.5.RELEASE.jar</string>
+          <string>WEB-INF/lib/spring-web-3.0.5.RELEASE.jar</string>
+          <string>WEB-INF/lib/changdi-service-impl-1.0-SNAPSHOT.jar</string>
+          <string>WEB-INF/lib/changdi-dao-1.0-SNAPSHOT.jar</string>
+          <string>WEB-INF/lib/log4j-1.2.16.jar</string>
+          <string>WEB-INF/lib/commons-lang-2.4.jar</string>
           <string>WEB-INF/lib/spring-jdbc-3.0.5.RELEASE.jar</string>
           <string>WEB-INF/lib/spring-tx-3.0.5.RELEASE.jar</string>
           <string>WEB-INF/lib/hsqldb-1.8.0.10.jar</string>
-          <string>WEB-INF/lib/spring-webmvc-3.0.5.RELEASE.jar</string>
-          <string>WEB-INF/lib/spring-context-support-3.0.5.RELEASE.jar</string>
-          <string>WEB-INF/lib/spring-web-3.0.5.RELEASE.jar</string>
           <string>WEB-INF/lib/commons-lang-1.0-beta-2.jar</string>
           <string>WEB-INF/lib/commons-defs-1.0-beta-2.jar</string>
           <string>WEB-INF/lib/commons-restrictions-1.0-beta-2.jar</string>
@@ -68,6 +68,18 @@
         <optional>false</optional>
       </dependency>
       <targetFileName>changdi-webcomponent-1.0-SNAPSHOT.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>com.changdi</groupId>
+        <artifactId>changdi-service-impl</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>changdi-service-impl-1.0-SNAPSHOT.jar</targetFileName>
     </org.apache.maven.plugin.war.util.DependencyInfo>
     <org.apache.maven.plugin.war.util.DependencyInfo>
       <dependency>
@@ -140,6 +152,30 @@
         <optional>false</optional>
       </dependency>
       <targetFileName>spring-core-3.0.5.RELEASE.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>3.0.5.RELEASE</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>spring-jdbc-3.0.5.RELEASE.jar</targetFileName>
+    </org.apache.maven.plugin.war.util.DependencyInfo>
+    <org.apache.maven.plugin.war.util.DependencyInfo>
+      <dependency>
+        <groupId>hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <version>1.8.0.10</version>
+        <type>jar</type>
+        <scope>compile</scope>
+        <exclusions/>
+        <optional>false</optional>
+      </dependency>
+      <targetFileName>hsqldb-1.8.0.10.jar</targetFileName>
     </org.apache.maven.plugin.war.util.DependencyInfo>
   </dependenciesInfo>
 </webapp-structure>
