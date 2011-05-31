@@ -29,4 +29,10 @@ public class IndexController {
 		model.put("venues", venues);
 		return "index";
 	}
+	
+	
+	public String getUserInfo(){
+		return "";
+	}
+	
 }
