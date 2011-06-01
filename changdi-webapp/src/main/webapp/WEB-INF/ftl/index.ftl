@@ -10,5 +10,9 @@
 		</p>
 	</div>
 </#list>
+<a href="oAuth">去QQ微博授权</a>
 
+<#if requestToken??>
+	${requestToken}
+</#if>
 <#include "share/footer.ftl">

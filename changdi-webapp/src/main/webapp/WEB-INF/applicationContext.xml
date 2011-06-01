@@ -13,10 +13,29 @@
 				http://www.springframework.org/schema/jdbc
 				http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
 
-	<jdbc:embedded-database id="dataSource">
-		<jdbc:script location="classpath:schema.sql" />
-		<jdbc:script location="classpath:test-data.sql" />
-	</jdbc:embedded-database>
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>/WEB-INF/jdbc.properties</value>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${jdbc.driverClassName}" />
+		<property name="jdbcUrl" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="idleConnectionTestPeriod" value="60" />
+		<property name="idleMaxAge" value="240" />
+		<property name="maxConnectionsPerPartition" value="2" />
+		<property name="minConnectionsPerPartition" value="0" />
+		<property name="lazyInit" value="true" />
+		<property name="partitionCount" value="2" />
+		<property name="acquireIncrement" value="1" />
+		<property name="statementsCacheSize" value="100" />
+		<property name="releaseHelperThreads" value="2" />
+	</bean>
+
 
 	<bean id="namedParameterJdbcTemplate"
 		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">

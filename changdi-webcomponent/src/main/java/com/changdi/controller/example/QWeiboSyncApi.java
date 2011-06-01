@@ -29,7 +29,7 @@ public class QWeiboSyncApi {
 		oauthKey.customSecrect = customSecret;
 		//The OAuth Call back URL(You should encode this url if it
 		//contains some unreserved characters).
-		oauthKey.callbackUrl = "http://www.qq.com";
+		oauthKey.callbackUrl = "http://www.zchangdi.com/callback";
 
 		QWeiboRequest request = new QWeiboRequest();
 		String res = null;
