@@ -3,6 +3,8 @@ package com.changdi.controller.qq;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +26,7 @@ public class OAuthController {
 	private VenueService venueService;
 
 	@RequestMapping(value = "oAuth")
-	public String oAuth(
-
-	ModelMap model) {
+	public String oAuth(ModelMap model,HttpSession session) {
 
 		logger.debug("i 'm in oAuth controller.");
 
@@ -36,14 +36,16 @@ public class OAuthController {
 				ResponseParser.customSecret);
 		List<Map<String, Object>> venues = venueService.showAllVenue();
 
-		model.put("requestToken", requestedToken);
+		session.setAttribute("requestToken", requestedToken);
 		model.put("venues", venues);
 
-		if (!ResponseParser.parseResponse(requestedToken))
-			return "index";
+		if (!ResponseParser.parseResponse(requestedToken,session))
+			return "";
 
+		String tokenKey = (String) session.getAttribute("tokenKey");
+		
 		return "redirect:http://open.t.qq.com/cgi-bin/authorize?oauth_token="
-				+ ResponseParser.tokenKey;
+				+ tokenKey;
 	}
 
 }

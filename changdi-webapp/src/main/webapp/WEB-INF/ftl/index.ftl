@@ -1,18 +1,17 @@
 <#include "share/header.ftl">
-
-<#list venues as item>
-	<div class="venue-content">
-		<p>
-			<label>id:${item.id?default(0)?c}</label>
-			<label>name:${item.name?default('')}</label>
-			<label>description:${item.description?default('')}</label>
-			<label>createAt:${item.createAt?default('')}</label>
-		</p>
+<#if !response??>
+	<a href="oAuth">去QQ微博授权</a>
+<#else>
+	<div >
+	<img src="${user.head}/100"/><br/>
+	<label>${user.name}</label><br/>
+	<label>${user.nick}</label><br/>
+	<label>${user.birth_year?c}-${user.birth_month}-${user.birth_day}</label><br/>
+	<label>${user.email}</label><br/>
+	<label>${user.fansnum}</label><br/>
+	<label>${user.idolnum}</label><br/>
+	<label>${user.tweetnum}</label><br/>
+	<label>${user.introduction}</label><br/>
 	</div>
-</#list>
-<a href="oAuth">去QQ微博授权</a>
-
-<#if requestToken??>
-	${requestToken}
 </#if>
 <#include "share/footer.ftl">

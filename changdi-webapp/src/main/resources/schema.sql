@@ -40,4 +40,32 @@ create table v_gallery_picture(
 	foreign key(g_id) references v_gallery(id)
 )ENGINE=MyISAM;
 
+/**table app_user*/
+drop table if exists app_user;
+create table app_user(
+	id bigint not null auto_increment,
+	name varchar(50) not null,
+	nick varchar(50) not null,
+	gender char(1),
+	birth_year varchar(4),
+	birth_month varchar(2),
+	birth_date varchar(2),
+	email varchar(50),
+	introduction varchar(200),
+	primary key(id),
+	unique key(name),
+	unique key(nick)
+)ENGINE=MyISAM;
+
+/** table token */
+drop table if exists u_token;
+create table u_token(
+	id bigint not null auto_increment,
+	token_key varchar(50) not null,
+	token_secret varchar(50) not null,
+	verifier varchar(50) not null,
+	u_id bigint not null,
+	primary key(id),
+	foreign key(u_id) references app_user(id)
+)ENGINE=MyISAM;
 

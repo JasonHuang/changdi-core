@@ -11,13 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssbase/base-min.css">
  	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css">
  
-	<style type="text/css">
-		.bmImg{
-			background:url("http://image.tianji.com/img/global/port_default.gif") no-repeat scroll 0 0 transparent;
-			display: block;
-			height: 100px;
-			width: 90px;
-		}
-	</style>
+<style type="text/css">
+body{
+	margin:auto;width:800px;
+}
+</style>
 </head>
 <body>

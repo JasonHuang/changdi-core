@@ -1,12 +1,12 @@
 package com.changdi.controller.util;
 
+import javax.servlet.http.HttpSession;
+
 public class ResponseParser {
 	public static String customKey = "09c4940a9199421e916389420184bfe4";
 	public static String customSecret = "7aa9c482ff5234ed8275dcd0c47f8cad";
-	public static String tokenKey;
-	public static String tokenSecret;
-
-	public static boolean parseResponse(String response) {
+	
+	public static boolean parseResponse(String response,HttpSession session) {
 		if (response == null || response.equals("")) {
 			return false;
 		}
@@ -24,14 +24,13 @@ public class ResponseParser {
 		if (token1.length < 2) {
 			return false;
 		}
-		tokenKey = token1[1];
+		session.setAttribute("tokenKey", token1[1]);
 
 		String[] token2 = strTokenSecrect.split("=");
 		if (token2.length < 2) {
 			return false;
 		}
-		tokenSecret = token2[1];
-
+		session.setAttribute("tokenSecret", token2[1]);
 		return true;
 	}
 }

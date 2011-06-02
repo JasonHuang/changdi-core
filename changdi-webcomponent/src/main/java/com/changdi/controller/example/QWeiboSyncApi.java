@@ -4,12 +4,15 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.changdi.controller.example.QWeiboType.PageFlag;
 import com.changdi.controller.example.QWeiboType.ResultType;
 import com.mime.qweibo.OauthKey;
 import com.mime.qweibo.QParameter;
 import com.mime.qweibo.QWeiboRequest;
 
+@Component
 public class QWeiboSyncApi {
 
 	/**
@@ -199,6 +202,37 @@ public class QWeiboSyncApi {
 		try {
 			res = request.syncRequest(url, httpMethod, oauthKey, parameters,
 					files);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+	
+	public String getUserInfo(String customKey, String customSecret,
+			String requestToken, String requestTokenSecrect,ResultType format){
+		String url = "http://open.t.qq.com/api/user/info";
+		List<QParameter> parameters = new ArrayList<QParameter>();
+		OauthKey oauthKey = new OauthKey();
+		oauthKey.customKey = customKey;
+		oauthKey.customSecrect = customSecret;
+		oauthKey.tokenKey = requestToken;
+		oauthKey.tokenSecrect = requestTokenSecrect;
+
+		String strFormat = null;
+		if (format == ResultType.ResultType_Xml) {
+			strFormat = "xml";
+		} else if (format == ResultType.ResultType_Json) {
+			strFormat = "json";
+		} else {
+			return "";
+		}
+
+		parameters.add(new QParameter("format", strFormat));
+
+		QWeiboRequest request = new QWeiboRequest();
+		String res = null;
+		try {
+			res = request.syncRequest(url, "GET", oauthKey, parameters, null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
