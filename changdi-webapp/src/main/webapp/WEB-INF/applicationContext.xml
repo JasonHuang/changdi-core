@@ -13,7 +13,8 @@
 				http://www.springframework.org/schema/jdbc
 				http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
 
-	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location">
 			<value>/WEB-INF/jdbc.properties</value>
 		</property>
@@ -45,8 +46,16 @@
 	<bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
 		<constructor-arg ref="dataSource" />
 	</bean>
-
-	<bean id="insertAction" class="org.springframework.jdbc.core.simple.SimpleJdbcInsert">
-		<constructor-arg ref="dataSource" />
+	
+	<bean id="venueDao" class="com.changdi.dao.impl.VenueDaoImpl">
+		<property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="userDao" class="com.changdi.dao.impl.UserDaoImpl">
+		<property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
+		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate"/>
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 </beans>

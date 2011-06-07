@@ -17,7 +17,7 @@ create table venue(
 /**table gallery*/
 drop table if exists v_gallery;
 create table v_gallery(
-	id bigint not null auto_increment,
+	id bigint not null auto_increment ,
 	name VARCHAR(50) not null,
 	description VARCHAR(500),
 	v_id bigint not null,
@@ -46,12 +46,16 @@ create table app_user(
 	id bigint not null auto_increment,
 	name varchar(50) not null,
 	nick varchar(50) not null,
-	gender char(1),
+	sex char(1),
+	head varchar(50),
 	birth_year varchar(4),
 	birth_month varchar(2),
-	birth_date varchar(2),
+	birth_day varchar(2),
 	email varchar(50),
 	introduction varchar(200),
+	last_login_time date,
+	createAt date,
+	updateAt date,
 	primary key(id),
 	unique key(name),
 	unique key(nick)

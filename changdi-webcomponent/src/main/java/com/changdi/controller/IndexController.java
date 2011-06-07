@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.changdi.controller.example.QWeiboSyncApi;
 import com.changdi.controller.example.QWeiboType.ResultType;
 import com.changdi.controller.util.ResponseParser;
+import com.changdi.service.UserService;
 import com.changdi.service.VenueService;
 import com.changdi.vo.ResponseData;
 import com.changdi.vo.User;
@@ -26,6 +27,9 @@ public class IndexController {
 
 	@Autowired
 	private VenueService venueService;
+
+	@Autowired
+	private UserService userService;
 
 	@Autowired
 	private QWeiboSyncApi api;
@@ -62,7 +66,7 @@ public class IndexController {
 			logger.debug(String.format("vo:%s", vo));
 
 			User uo = vo.getData();
-			uo = venueService.addAppUser(uo);
+			userService.authorize(uo);
 
 			model.put("response", response);
 			model.put("user", uo);

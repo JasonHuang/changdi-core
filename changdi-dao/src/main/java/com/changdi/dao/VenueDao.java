@@ -3,7 +3,7 @@ package com.changdi.dao;
 import java.util.List;
 import java.util.Map;
 
-import com.changdi.persist.Venue;
+import com.changdi.dao.persist.Venue;
 
 public interface VenueDao {
 

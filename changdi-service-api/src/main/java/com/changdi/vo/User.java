@@ -1,19 +1,21 @@
 package com.changdi.vo;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class User {
+	private long id;
 	private String name;
 	private String nick;
 	private String uid;
 	private String head;
 	private String location;
 	private String country_code;
-	private Integer birth_day;
-	private Integer birth_month;
-	private Integer birth_year;
+	private String birth_day;
+	private String birth_month;
+	private String birth_year;
 	private String city_code;
 	private String email;
 	private Integer fansnum;
@@ -22,16 +24,27 @@ public class User {
 	private Integer isent;
 	private Integer isvip;
 	private String province_code;
-	private Integer sex;
+	private String sex;
 	// private List<Edu> edu;
 	private List<Tag> tag;
 	private Integer tweetnum;
 	private String verifyinfo;
+	private Timestamp lastLogin;
+	private Timestamp createAt;
+	private Timestamp updateAt;
+	
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public static class Tag {
 		private String id;
 		private String name;
-
 
 		public String getId() {
 			return id;
@@ -107,27 +120,27 @@ public class User {
 		this.country_code = country_code;
 	}
 
-	public Integer getBirth_day() {
+	public String getBirth_day() {
 		return birth_day;
 	}
 
-	public void setBirth_day(Integer birth_day) {
+	public void setBirth_day(String birth_day) {
 		this.birth_day = birth_day;
 	}
 
-	public Integer getBirth_month() {
+	public String getBirth_month() {
 		return birth_month;
 	}
 
-	public void setBirth_month(Integer birth_month) {
+	public void setBirth_month(String birth_month) {
 		this.birth_month = birth_month;
 	}
 
-	public Integer getBirth_year() {
+	public String getBirth_year() {
 		return birth_year;
 	}
 
-	public void setBirth_year(Integer birth_year) {
+	public void setBirth_year(String birth_year) {
 		this.birth_year = birth_year;
 	}
 
@@ -195,11 +208,11 @@ public class User {
 		this.province_code = province_code;
 	}
 
-	public Integer getSex() {
+	public String getSex() {
 		return sex;
 	}
 
-	public void setSex(Integer sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
 
@@ -227,6 +240,30 @@ public class User {
 		this.verifyinfo = verifyinfo;
 	}
 
+	public Timestamp getLastLogin() {
+		return lastLogin;
+	}
+
+	public void setLastLogin(Timestamp lastLogin) {
+		this.lastLogin = lastLogin;
+	}
+
+	public Timestamp getCreateAt() {
+		return createAt;
+	}
+
+	public void setCreateAt(Timestamp createAt) {
+		this.createAt = createAt;
+	}
+
+	public Timestamp getUpdateAt() {
+		return updateAt;
+	}
+
+	public void setUpdateAt(Timestamp updateAt) {
+		this.updateAt = updateAt;
+	}
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */
@@ -234,18 +271,22 @@ public class User {
 		return new ToStringBuilder(this)
 				.append("birth_month", this.birth_month)
 				.append("introduction", this.introduction)
+				.append("updateAt", this.updateAt)
+				.append("city_code", this.city_code)
 				.append("province_code", this.province_code)
-				.append("city_code", this.city_code).append("uid", this.uid)
-				.append("verifyinfo", this.verifyinfo)
-				.append("fansnum", this.fansnum).append("tag", this.tag)
-				.append("tweetnum", this.tweetnum).append("isvip", this.isvip)
-				.append("isent", this.isent).append("email", this.email)
-				.append("head", this.head).append("location", this.location)
+				.append("tag", this.tag).append("tweetnum", this.tweetnum)
+				.append("isvip", this.isvip).append("email", this.email)
+				.append("createAt", this.createAt).append("nick", this.nick)
+				.append("id", this.id).append("lastLogin", this.lastLogin)
+				.append("uid", this.uid).append("verifyinfo", this.verifyinfo)
+				.append("fansnum", this.fansnum).append("isent", this.isent)
+				.append("location", this.location).append("head", this.head)
 				.append("birth_year", this.birth_year)
 				.append("birth_day", this.birth_day).append("name", this.name)
 				.append("country_code", this.country_code)
-				.append("nick", this.nick).append("sex", this.sex)
-				.append("idolnum", this.idolnum).toString();
+				.append("idolnum", this.idolnum).append("sex", this.sex)
+				.toString();
 	}
+
 
 }

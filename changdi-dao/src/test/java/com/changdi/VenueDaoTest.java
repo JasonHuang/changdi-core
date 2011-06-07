@@ -7,7 +7,7 @@ import javax.annotation.Resource;
 import org.junit.Test;
 
 import com.changdi.dao.VenueDao;
-import com.changdi.persist.Venue;
+import com.changdi.dao.persist.Venue;
 
 public class VenueDaoTest extends DaoTestBase {
 	@Resource
