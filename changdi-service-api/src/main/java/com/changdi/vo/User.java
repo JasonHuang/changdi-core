@@ -33,6 +33,10 @@ public class User {
 	private Timestamp createAt;
 	private Timestamp updateAt;
 	
+	private String tokenKey;
+	private String tokenSecret;
+	private String verifier;
+	
 
 	public long getId() {
 		return id;
@@ -264,6 +268,30 @@ public class User {
 		this.updateAt = updateAt;
 	}
 
+	public String getTokenKey() {
+		return tokenKey;
+	}
+
+	public void setTokenKey(String tokenKey) {
+		this.tokenKey = tokenKey;
+	}
+
+	public String getTokenSecret() {
+		return tokenSecret;
+	}
+
+	public void setTokenSecret(String tokenSecret) {
+		this.tokenSecret = tokenSecret;
+	}
+
+	public String getVerifier() {
+		return verifier;
+	}
+
+	public void setVerifier(String verifier) {
+		this.verifier = verifier;
+	}
+
 	/**
 	 * @see java.lang.Object#toString()
 	 */
@@ -276,14 +304,18 @@ public class User {
 				.append("province_code", this.province_code)
 				.append("tag", this.tag).append("tweetnum", this.tweetnum)
 				.append("isvip", this.isvip).append("email", this.email)
-				.append("createAt", this.createAt).append("nick", this.nick)
-				.append("id", this.id).append("lastLogin", this.lastLogin)
-				.append("uid", this.uid).append("verifyinfo", this.verifyinfo)
+				.append("createAt", this.createAt)
+				.append("tokenSecret", this.tokenSecret)
+				.append("nick", this.nick).append("id", this.id)
+				.append("lastLogin", this.lastLogin).append("uid", this.uid)
+				.append("verifyinfo", this.verifyinfo)
 				.append("fansnum", this.fansnum).append("isent", this.isent)
 				.append("location", this.location).append("head", this.head)
 				.append("birth_year", this.birth_year)
 				.append("birth_day", this.birth_day).append("name", this.name)
 				.append("country_code", this.country_code)
+				.append("verifier", this.verifier)
+				.append("tokenKey", this.tokenKey)
 				.append("idolnum", this.idolnum).append("sex", this.sex)
 				.toString();
 	}

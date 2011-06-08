@@ -37,25 +37,5 @@
 		<property name="releaseHelperThreads" value="2" />
 	</bean>
 
-
-	<bean id="namedParameterJdbcTemplate"
-		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-		<constructor-arg ref="dataSource" />
-	</bean>
-
-	<bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
-		<constructor-arg ref="dataSource" />
-	</bean>
-	
-	<bean id="venueDao" class="com.changdi.dao.impl.VenueDaoImpl">
-		<property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
-		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate"/>
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
-	
-	<bean id="userDao" class="com.changdi.dao.impl.UserDaoImpl">
-		<property name="namedParameterJdbcTemplate" ref="namedParameterJdbcTemplate"/>
-		<property name="simpleJdbcTemplate" ref="simpleJdbcTemplate"/>
-		<property name="dataSource" ref="dataSource"/>
-	</bean>
+	<import resource="dao.xml"/>
 </beans>
