@@ -42,7 +42,7 @@ public class OAuthController {
 		model.put("venues", venues);
 
 		if (!ResponseParser.parseResponse(requestedToken,session))
-			return "";
+			return "404";
 
 		String tokenKey = (String) session.getAttribute("tokenKey");
 		
