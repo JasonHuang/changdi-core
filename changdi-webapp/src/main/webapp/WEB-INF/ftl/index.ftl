@@ -87,24 +87,57 @@ setTimeout(function(){
 
 	</div>
 
-	 <div class="aside">
-		<div id="profile">
-			<div class="infobox">
-				<div class="ex1"><span></span></div>
-	   				<div class="bd">
-						<img src="${user.head}/100"/><br/>
-						<label>${user.name}</label><br/>
-						<div class="sep-line"></div>
-						<label>${user.nick}</label><br/>
-						<label>${user.birth_year}-${user.birth_month}-${user.birth_day}</label><br/>
-						<label>${user.email}</label><br/>
-						<label>${user.fansnum}</label><br/>
-						<label>${user.idolnum}</label><br/>
-						<label>${user.tweetnum}</label><br/>
-						<label>${user.introduction}</label><br/>
-					</div>
+	<div id="content">
+   		<div class="grid-16-8 clearfix">
+       	<div class="article drop-area ui-sortable">
+       	
+		
+				<div class="clear"></div>
+				<div style="width:590px;">
+		        	<div class="photoin"><a class="nbg" href="http://www.douban.com/photos/album/36041987/" title="星座" alt="星座"><img src="http://img3.douban.com/view/photo/albumicon/public/p684775749.jpg" class="album_s"/></a>
+		        	<div class="ll pl" style="padding-top:8px;width:138px"><a href="http://www.douban.com/photos/album/36041987/">星座</a><br/>2011-03-18更新</div></div>
+		          <div class="clear"></div>
+		    	</div>
+			</div>
+			 <div class="aside drop-area ui-sortable">
+				<div id="profile">
+					<div class="infobox">
+						<div class="ex1"><span></span></div>
+			   				<div class="bd">
+								<img src="${user.head}/100"/><br/>
+								<label>${user.name}</label><br/>
+								<div class="sep-line"></div>
+								<label>${user.nick}</label><br/>
+								<label>${user.birth_year}-${user.birth_month}-${user.birth_day}</label><br/>
+								<label>${user.email}</label><br/>
+								<label>${user.fansnum}</label><br/>
+								<label>${user.idolnum}</label><br/>
+								<label>${user.tweetnum}</label><br/>
+								<label>${user.introduction}</label><br/>
+							</div>
+						</div>
+					</div>	
 				</div>
-			</div>	
+			</div>
+			<div id="footer">
+				<span id="icp" class="fleft gray-link">
+				    &copy; 2005－2011 douban.com, all rights reserved
+				</span>
+				<span class="fright">
+				    <a href="http://www.douban.com/about">关于豆瓣</a>
+				
+				    · <a href="http://www.douban.com/about?topic=teamup">在豆瓣工作</a>
+				    · <a href="http://www.douban.com/about?topic=contactus">联系我们</a>
+				    · <a href="http://www.douban.com/about?policy=disclaimer">免责声明</a>
+				    
+				    · <a href="http://www.douban.com/help/">帮助中心</a>
+				    · <a href="http://www.douban.com/service/">API</a>
+				
+				    · <a href="http://www.douban.com/mobile/">手机豆瓣</a>
+				    · <a href="http://www.douban.com/partner/">品牌俱乐部</a>
+				
+				</span>
+   			</div>
 		</div>
 	</div>
 </div>

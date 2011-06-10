@@ -13,5 +13,8 @@
  
  	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/static/changdi.css">
  	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/static/cd.css">
+ 	
+ 	<link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon">
+ 	
 </head>
 <body>
