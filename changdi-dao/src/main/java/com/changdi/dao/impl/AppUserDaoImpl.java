@@ -6,11 +6,11 @@ import java.util.Map;
 
 import com.changdi.dao.AppUserDao;
 import com.changdi.dao.base.BaseDao;
-import com.changdi.vo.User;
+import com.changdi.vo.UserVO;
 
 public class AppUserDaoImpl extends BaseDao implements AppUserDao {
 	@Override
-	public void insertAppUser(User user) {
+	public void insertAppUser(UserVO user) {
 		logger.debug("in VenueDaoImpl....");
 		Map<String, Object> map = new HashMap<String, Object>(4);
 		map.put("id", 1234);

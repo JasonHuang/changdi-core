@@ -15,7 +15,7 @@ import com.changdi.controller.example.QWeiboType.ResultType;
 import com.changdi.controller.util.ResponseParser;
 import com.changdi.service.VenueService;
 import com.changdi.vo.ResponseData;
-import com.changdi.vo.User;
+import com.changdi.vo.UserVO;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -55,13 +55,13 @@ public class IndexController {
 			logger.debug(String.format("response:%s", response));
 			Gson gson = new Gson();
 
-			ResponseData<User> vo = gson.fromJson(response,
-					new TypeToken<ResponseData<User>>() {
+			ResponseData<UserVO> vo = gson.fromJson(response,
+					new TypeToken<ResponseData<UserVO>>() {
 					}.getType());
 
 			logger.debug(String.format("vo:%s", vo));
 
-			User uo = vo.getData();
+			UserVO uo = vo.getData();
 			uo = venueService.addAppUser(uo);
 
 			model.put("response", response);

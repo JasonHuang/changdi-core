@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 
-public class User {
+public class UserVO {
 	private String name;
 	private String nick;
 	private String uid;
