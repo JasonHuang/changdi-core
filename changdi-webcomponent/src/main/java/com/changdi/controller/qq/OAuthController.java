@@ -36,11 +36,13 @@ public class OAuthController {
 				ResponseParser.customSecret);
 		List<Map<String, Object>> venues = venueService.showAllVenue();
 
+		logger.debug(String.format("requestedToken:%s", requestedToken));
+		
 		session.setAttribute("requestToken", requestedToken);
 		model.put("venues", venues);
 
 		if (!ResponseParser.parseResponse(requestedToken,session))
-			return "";
+			return "404";
 
 		String tokenKey = (String) session.getAttribute("tokenKey");
 		

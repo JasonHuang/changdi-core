@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import com.changdi.vo.ResponseData;
-import com.changdi.vo.UserVO;
+import com.changdi.vo.User;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -33,7 +33,7 @@ public class Test {
 			e.printStackTrace();
 		}
 		System.out.println(json);
-		ResponseData<UserVO> vo = gson.fromJson(json, new TypeToken<ResponseData<UserVO>>(){}.getType());
+		ResponseData<User> vo = gson.fromJson(json, new TypeToken<ResponseData<User>>(){}.getType());
 		System.out.println(vo);
 	}
 }

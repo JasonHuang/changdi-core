@@ -11,10 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssbase/base-min.css">
  	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssfonts/fonts-min.css">
  
-<style type="text/css">
-body{
-	margin:auto;width:800px;
-}
-</style>
+ 	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/static/changdi.css">
+ 	<link rel="stylesheet" type="text/css" href="${rc.contextPath}/static/cd.css">
+ 	
+ 	<link rel="shortcut icon" href="http://img3.douban.com/favicon.ico" type="image/x-icon">
+ 	
 </head>
 <body>

@@ -1,8 +1,6 @@
-package com.changdi.persist;
+package com.changdi.dao.persist;
 
 import java.sql.Timestamp;
-
-import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Venue {
 	private long id;
@@ -42,13 +40,4 @@ public class Venue {
 		this.createAt = createAt;
 	}
 
-	/**
-	 * @see java.lang.Object#toString()
-	 */
-	public String toString() {
-		return new ToStringBuilder(this)
-				.append("description", this.description)
-				.append("name", this.name).append("createAt", this.createAt)
-				.append("id", this.id).toString();
-	}
 }

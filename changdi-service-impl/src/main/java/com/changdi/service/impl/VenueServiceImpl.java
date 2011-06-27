@@ -3,15 +3,12 @@ package com.changdi.service.impl;
 import java.util.List;
 import java.util.Map;
 
-import org.hsqldb.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.changdi.dao.AppUserDao;
 import com.changdi.dao.VenueDao;
-import com.changdi.persist.AppUser;
 import com.changdi.service.VenueService;
-import com.changdi.vo.UserVO;
+import com.changdi.vo.User;
 
 @Service
 public class VenueServiceImpl implements VenueService {
@@ -20,7 +17,7 @@ public class VenueServiceImpl implements VenueService {
 	private VenueDao venueDao;
 
 	@Autowired
-	private AppUserDao appUserDao;
+	private VenueDao appUserDao;
 
 	@Override
 	public List<Map<String, Object>> showAllVenue() {
@@ -28,14 +25,9 @@ public class VenueServiceImpl implements VenueService {
 	}
 
 	@Override
-	public UserVO addAppUser(UserVO uo) {
-		AppUser user = appUserDao.insertVenue(UserDTO.convertToVO(uo);
-		return UserDTO.convertToVO(user);
-	}
-
-	@Override
 	public User addAppUser(User uo) {
-		// TODO Auto-generated method stub
+		// AppUser user = appUserDao.insertVenue(VenueDTO.convertToVO(uo);
+		// return UserDTO.convertToVO(user);
 		return null;
 	}
 

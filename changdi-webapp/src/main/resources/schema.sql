@@ -10,18 +10,18 @@ create table venue(
 	id bigint not null auto_increment ,
 	name VARCHAR(50) not null,
 	description VARCHAR(500),
-	createAt date not null,
+	createAt datetime not null,
 	primary key(id)
 ) ENGINE=MyISAM;
 
 /**table gallery*/
 drop table if exists v_gallery;
 create table v_gallery(
-	id bigint not null auto_increment,
+	id bigint not null auto_increment ,
 	name VARCHAR(50) not null,
 	description VARCHAR(500),
 	v_id bigint not null,
-	createAt date not null,
+	createAt datetime not null,
 	primary key(id),
 	foreign key(v_id) references venue(id) 
 )ENGINE=MyISAM;
@@ -35,7 +35,7 @@ create table v_gallery_picture(
 	is_primary_image char(1),
 	g_id bigint not null,
 	location VARCHAR(50) not null,
-	createAt date not null,
+	createAt datetime not null,
 	primary key(id),
 	foreign key(g_id) references v_gallery(id)
 )ENGINE=MyISAM;
@@ -46,12 +46,16 @@ create table app_user(
 	id bigint not null auto_increment,
 	name varchar(50) not null,
 	nick varchar(50) not null,
-	gender char(1),
+	sex char(1),
+	head varchar(50),
 	birth_year varchar(4),
 	birth_month varchar(2),
-	birth_date varchar(2),
+	birth_day varchar(2),
 	email varchar(50),
 	introduction varchar(200),
+	last_login_time datetime,
+	createAt datetime,
+	updateAt datetime,
 	primary key(id),
 	unique key(name),
 	unique key(nick)
@@ -61,8 +65,8 @@ create table app_user(
 drop table if exists u_token;
 create table u_token(
 	id bigint not null auto_increment,
-	token_key varchar(50) not null,
-	token_secret varchar(50) not null,
+	tokenKey varchar(50) not null,
+	tokenSecret varchar(50) not null,
 	verifier varchar(50) not null,
 	u_id bigint not null,
 	primary key(id),

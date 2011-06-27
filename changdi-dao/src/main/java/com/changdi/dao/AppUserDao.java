@@ -1,10 +1,10 @@
 package com.changdi.dao;
 
-import com.changdi.vo.UserVO;
+import com.changdi.vo.User;
 
 
 public interface AppUserDao {
 
-	public void insertAppUser(UserVO user);
+	public void insertAppUser(User user);
 
 }
